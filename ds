@@ -1,15 +1,12 @@
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
-<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://hc6-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
 <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
 </edmx:Reference>
-<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://hc6-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
 <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
 </edmx:Reference>
-<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://hc6-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
 <edmx:Include Namespace="Org.OData.Capabilities.V1"/>
-</edmx:Reference>
-<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
-<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
 </edmx:Reference>
 <edmx:DataServices m:DataServiceVersion="2.0">
 <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="CA_OC_OUTPUT_REQUEST" xml:lang="en" sap:schema-version="1">
@@ -45,8 +42,8 @@
 </Key>
 <Property Name="ApplObjectType" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Appl. Object Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:value-list="standard"/>
 <Property Name="ApplObjectId" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Appl. Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-<NavigationProperty Name="Items" Relationship="CA_OC_OUTPUT_REQUEST.Root_Items" FromRole="FromRole_Root_Items" ToRole="ToRole_Root_Items"/>
 <NavigationProperty Name="Preview" Relationship="CA_OC_OUTPUT_REQUEST.Root_Preview" FromRole="FromRole_Root_Preview" ToRole="ToRole_Root_Preview"/>
+<NavigationProperty Name="Items" Relationship="CA_OC_OUTPUT_REQUEST.Root_Items" FromRole="FromRole_Root_Items" ToRole="ToRole_Root_Items"/>
 </EntityType>
 <EntityType Name="Item" sap:content-version="1">
 <Key>
@@ -67,9 +64,8 @@
 <Property Name="PrintQueueName" Type="Edm.String" MaxLength="32" sap:unicode="false" sap:label="Print Queue" sap:value-list="standard"/>
 <Property Name="PrintQueueType" Type="Edm.String" Nullable="false" MaxLength="51" sap:unicode="false" sap:label="Print Queue Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 <Property Name="PrintQueueTypeDescription" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Print Queue Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-<Property Name="PageDescriptionLanguage" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Page Description Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 <Property Name="FormTemplateCountryCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="FormTemplateCountry" sap:unicode="false" sap:label="Form Country/Region" sap:creatable="false" sap:value-list="fixed-values"/>
-<Property Name="FormTemplateCountry" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:label="Form Country/Region"/>
+<Property Name="FormTemplateCountry" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:label="Form Country"/>
 <Property Name="SenderCountryCode" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Sender Ctry/Reg." sap:creatable="false" sap:sortable="false" sap:filterable="false" sap:value-list="standard"/>
 <Property Name="ItemId" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item ID" sap:updatable="false" sap:filterable="false"/>
 <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="VL_FV_APOC_OR_OUTPUT_STATUS/Text" sap:unicode="false" sap:label="Status" sap:updatable="false" sap:value-list="fixed-values"/>
@@ -99,13 +95,13 @@
 <Property Name="UxFcFormTemplateName" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="UI Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 <Property Name="UxFcSenderCountryCode" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="UI Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 <Property Name="UxFcItemAttachment" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-<NavigationProperty Name="ItemAttachment" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemAttachment" FromRole="FromRole_Item_ItemAttachment" ToRole="ToRole_Item_ItemAttachment"/>
-<NavigationProperty Name="ItemLog" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemLog" FromRole="FromRole_Item_ItemLog" ToRole="ToRole_Item_ItemLog"/>
-<NavigationProperty Name="Preview" Relationship="CA_OC_OUTPUT_REQUEST.Item_Preview" FromRole="FromRole_Item_Preview" ToRole="ToRole_Item_Preview"/>
-<NavigationProperty Name="GetDocument" Relationship="CA_OC_OUTPUT_REQUEST.Item_GetDocument" FromRole="FromRole_Item_GetDocument" ToRole="ToRole_Item_GetDocument"/>
-<NavigationProperty Name="ItemEMailBCC" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemEMailBCC" FromRole="FromRole_Item_ItemEMailBCC" ToRole="ToRole_Item_ItemEMailBCC"/>
-<NavigationProperty Name="ItemEMailCC" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemEMailCC" FromRole="FromRole_Item_ItemEMailCC" ToRole="ToRole_Item_ItemEMailCC"/>
 <NavigationProperty Name="ItemEMailTO" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemEMailTO" FromRole="FromRole_Item_ItemEMailTO" ToRole="ToRole_Item_ItemEMailTO"/>
+<NavigationProperty Name="ItemEMailCC" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemEMailCC" FromRole="FromRole_Item_ItemEMailCC" ToRole="ToRole_Item_ItemEMailCC"/>
+<NavigationProperty Name="ItemEMailBCC" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemEMailBCC" FromRole="FromRole_Item_ItemEMailBCC" ToRole="ToRole_Item_ItemEMailBCC"/>
+<NavigationProperty Name="GetDocument" Relationship="CA_OC_OUTPUT_REQUEST.Item_GetDocument" FromRole="FromRole_Item_GetDocument" ToRole="ToRole_Item_GetDocument"/>
+<NavigationProperty Name="Preview" Relationship="CA_OC_OUTPUT_REQUEST.Item_Preview" FromRole="FromRole_Item_Preview" ToRole="ToRole_Item_Preview"/>
+<NavigationProperty Name="ItemLog" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemLog" FromRole="FromRole_Item_ItemLog" ToRole="ToRole_Item_ItemLog"/>
+<NavigationProperty Name="ItemAttachment" Relationship="CA_OC_OUTPUT_REQUEST.Item_ItemAttachment" FromRole="FromRole_Item_ItemAttachment" ToRole="ToRole_Item_ItemAttachment"/>
 <NavigationProperty Name="VL_FV_APOC_OR_OUTPUT_STATUS" Relationship="CA_OC_OUTPUT_REQUEST.ItemToStatus" FromRole="FromRole_ItemToStatus" ToRole="ToRole_ItemToStatus"/>
 <NavigationProperty Name="VL_FV_APOC_OR_DISPATCH_TIME" Relationship="CA_OC_OUTPUT_REQUEST.ItemToDispatchTime" FromRole="FromRole_ItemToDispatchTime" ToRole="ToRole_ItemToDispatchTime"/>
 <NavigationProperty Name="VL_SH_H_T002" Relationship="CA_OC_OUTPUT_REQUEST.ItemToFormTemplateLanguageCode" FromRole="FromRole_ItemToFormTemplateLanguageCode" ToRole="ToRole_ItemToFormTemplateLanguageCode"/>
@@ -312,12 +308,12 @@
 <End Type="CA_OC_OUTPUT_REQUEST.Preview" Multiplicity="1" Role="ToRole_Root_Preview"/>
 <ReferentialConstraint>
 <Principal Role="FromRole_Root_Preview">
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Principal>
 <Dependent Role="ToRole_Root_Preview">
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Dependent>
 </ReferentialConstraint>
 </Association>
@@ -326,12 +322,12 @@
 <End Type="CA_OC_OUTPUT_REQUEST.Item" Multiplicity="*" Role="ToRole_Root_Items"/>
 <ReferentialConstraint>
 <Principal Role="FromRole_Root_Items">
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Principal>
 <Dependent Role="ToRole_Root_Items">
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Dependent>
 </ReferentialConstraint>
 </Association>
@@ -372,14 +368,14 @@
 <End Type="CA_OC_OUTPUT_REQUEST.GetDocument" Multiplicity="1" Role="ToRole_Item_GetDocument"/>
 <ReferentialConstraint>
 <Principal Role="FromRole_Item_GetDocument">
+<PropertyRef Name="ApplObjectType"/>
 <PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ItemId"/>
-<PropertyRef Name="ApplObjectType"/>
 </Principal>
 <Dependent Role="ToRole_Item_GetDocument">
+<PropertyRef Name="ApplObjectType"/>
 <PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ItemId"/>
-<PropertyRef Name="ApplObjectType"/>
 </Dependent>
 </ReferentialConstraint>
 </Association>
@@ -388,14 +384,14 @@
 <End Type="CA_OC_OUTPUT_REQUEST.Preview" Multiplicity="1" Role="ToRole_Item_Preview"/>
 <ReferentialConstraint>
 <Principal Role="FromRole_Item_Preview">
-<PropertyRef Name="ApplObjectId"/>
-<PropertyRef Name="ApplObjectType"/>
 <PropertyRef Name="ItemId"/>
+<PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Principal>
 <Dependent Role="ToRole_Item_Preview">
-<PropertyRef Name="ApplObjectId"/>
-<PropertyRef Name="ApplObjectType"/>
 <PropertyRef Name="ItemId"/>
+<PropertyRef Name="ApplObjectType"/>
+<PropertyRef Name="ApplObjectId"/>
 </Dependent>
 </ReferentialConstraint>
 </Association>
@@ -408,14 +404,14 @@
 <End Type="CA_OC_OUTPUT_REQUEST.ItemAttachment" Multiplicity="*" Role="ToRole_Item_ItemAttachment"/>
 <ReferentialConstraint>
 <Principal Role="FromRole_Item_ItemAttachment">
-<PropertyRef Name="ApplObjectType"/>
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ItemId"/>
+<PropertyRef Name="ApplObjectId"/>
+<PropertyRef Name="ApplObjectType"/>
 </Principal>
 <Dependent Role="ToRole_Item_ItemAttachment">
-<PropertyRef Name="ApplObjectType"/>
-<PropertyRef Name="ApplObjectId"/>
 <PropertyRef Name="ItemId"/>
+<PropertyRef Name="ApplObjectId"/>
+<PropertyRef Name="ApplObjectType"/>
 </Dependent>
 </ReferentialConstraint>
 </Association>
@@ -545,29 +541,29 @@
 <End EntitySet="ItemLogs" Role="ToRole_Item_ItemLog"/>
 </AssociationSet>
 <FunctionImport Name="Resend" ReturnType="Collection(CA_OC_OUTPUT_REQUEST.Message)" m:HttpMethod="POST" sap:label="Resend">
-<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In" sap:label="Appl. Object Type"/>
-<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In" sap:label="Appl. Object ID"/>
-<Parameter Name="ItemId" Type="Edm.String" Mode="In" sap:label="Item ID"/>
+<Parameter Name="ItemId" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In"/>
 </FunctionImport>
 <FunctionImport Name="SetToCompleted" ReturnType="Collection(CA_OC_OUTPUT_REQUEST.Message)" m:HttpMethod="POST" sap:label="Cancel">
-<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In" sap:label="Output Type"/>
-<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In" sap:label="Object Type"/>
-<Parameter Name="ItemId" Type="Edm.String" Mode="In" sap:label="Item ID"/>
+<Parameter Name="ItemId" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In"/>
 </FunctionImport>
 <FunctionImport Name="IssueOutput" ReturnType="Collection(CA_OC_OUTPUT_REQUEST.Message)" m:HttpMethod="POST" sap:label="Issue Output">
-<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In" sap:label="Appl. Object ID"/>
-<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In" sap:label="Appl. Object Type"/>
-<Parameter Name="ItemId" Type="Edm.String" Mode="In" sap:label="Item ID"/>
+<Parameter Name="ItemId" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In"/>
 </FunctionImport>
 <FunctionImport Name="Determine" ReturnType="Collection(CA_OC_OUTPUT_REQUEST.Message)" m:HttpMethod="POST" sap:label="Determine Output Items">
-<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In" sap:label="Appl. Object ID"/>
-<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In" sap:label="Appl. Object Type"/>
-<Parameter Name="DetermineMergeOption" Type="Edm.String" Mode="In" sap:label="Determination Merge Option"/>
+<Parameter Name="DetermineMergeOption" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In"/>
 </FunctionImport>
 <FunctionImport Name="Check" ReturnType="Collection(CA_OC_OUTPUT_REQUEST.Message)" m:HttpMethod="POST" sap:label="Check">
-<Parameter Name="ItemId" Type="Edm.String" Mode="In" sap:label="Item ID"/>
-<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In" sap:label="Appl. Object Type"/>
-<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In" sap:label="Appl. Object ID"/>
+<Parameter Name="ApplObjectId" Type="Edm.String" Mode="In"/>
+<Parameter Name="ApplObjectType" Type="Edm.String" Mode="In"/>
+<Parameter Name="ItemId" Type="Edm.String" Mode="In"/>
 </FunctionImport>
 </EntityContainer>
 <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="CA_OC_OUTPUT_REQUEST.ItemEMail/ApplObjectType">
@@ -759,6 +755,10 @@
 <PropertyValue Property="CollectionPath" String="VL_SH_H_PQPRINTQUEUE"/>
 <PropertyValue Property="Parameters">
 <Collection>
+<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+<PropertyValue Property="LocalDataProperty" PropertyPath="PrintQueueType"/>
+<PropertyValue Property="ValueListProperty" String="QFORMAT"/>
+</Record>
 <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
 <PropertyValue Property="LocalDataProperty" PropertyPath="PrintQueueName"/>
 <PropertyValue Property="ValueListProperty" String="QNAME"/>
@@ -1158,21 +1158,9 @@
 <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
 </Record>
 </Annotation>
-<Annotation Term="SAP__CodeList.CurrencyCodes">
-<Record>
-<PropertyValue Property="Url" String="../../iwbep/common;v=0001;o=LOCAL/$metadata"/>
-<PropertyValue Property="CollectionPath" String="Currencies"/>
-</Record>
-</Annotation>
-<Annotation Term="SAP__CodeList.UnitsOfMeasure">
-<Record>
-<PropertyValue Property="Url" String="../../iwbep/common;v=0001;o=LOCAL/$metadata"/>
-<PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
-</Record>
-</Annotation>
 </Annotations>
-<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/sap/CA_OC_OUTPUT_REQUEST_SRV/$metadata"/>
-<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://qs9-715.wdf.sap.corp:443/sap/opu/odata/sap/CA_OC_OUTPUT_REQUEST_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://hc6-715.wdf.sap.corp:443/sap/opu/odata/sap/CA_OC_OUTPUT_REQUEST_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://hc6-715.wdf.sap.corp:443/sap/opu/odata/sap/CA_OC_OUTPUT_REQUEST_SRV/$metadata"/>
 </Schema>
 </edmx:DataServices>
 </edmx:Edmx>
